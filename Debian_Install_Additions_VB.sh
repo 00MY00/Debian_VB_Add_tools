@@ -25,6 +25,23 @@ then
 
     reboot
 
+if [ $OK = "ok" ];
+then
+    echo -e "\033[32m [ OK ]\033[00m Starting !"
+    
+    sleep 5
+
+    apt update -y && apt upgrade -y
+
+    apt install make gcc dkms linux-source linux-headers-$(uname -r)
+
+    cd /media/cdrom0
+
+    sh VBoxLinuxAdditions.run
+
+    reboot
+
+
 else
     clear
     echo ""
