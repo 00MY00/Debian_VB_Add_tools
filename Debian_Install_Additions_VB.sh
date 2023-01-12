@@ -11,6 +11,8 @@ echo ""
 read -p ": " OK
 if [ $OK = "OK" ];
 then
+    echo -e "\033[32m [ OK ]\033[00m Starting !"
+    
     sleep 5
 
     apt update -y && apt upgrade -y
@@ -26,5 +28,5 @@ then
 else
     clear
     echo ""
-    echo "Annulée !"
+    echo -e "\033[31m Annulée !\033[00m"
 fi
